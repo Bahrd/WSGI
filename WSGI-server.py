@@ -37,6 +37,10 @@ def JSNX():
     content['receiver'], content['sender'] = content['sender'], content['receiver']
     content['message'] = 'Python On Rails'
 
+    command, ret = content['code'], {}
+    exec(command, ret)
+    content['code'] = str(ret['code'])
+    
     print('Reply-to a client: ', json.dumps(content, indent = 0b11))
     # ... and send a result back to a client
     return content
