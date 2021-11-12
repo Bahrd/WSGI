@@ -37,6 +37,7 @@ def JSNX():
     content['receiver'], content['sender'] = content['sender'], content['receiver']
     content['message'] = 'Python On Rails'
 
+    # https://stackoverflow.com/questions/37237034/how-to-get-results-out-of-a-python-exec-eval-call
     command, ret = content['code'], {}
     exec(command, ret)
     content['code'] = str(ret['code'])
