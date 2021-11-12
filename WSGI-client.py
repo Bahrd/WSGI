@@ -4,16 +4,14 @@ import requests
 import json
 
 def invoke(url, data):
-    print('Sent-to a server: ' + json.dumps(data, indent = 3))
+    print('Sent-to a server: ' + json.dumps(data, indent = 0b11))
+    # Invoke a service via POST...
     answer = requests.post(url, json = data).content
-    return_value = json.loads(answer)
-    return return_value
+    # ... and wait for a response
+    return json.loads(answer)
+
 # A target "namespace" and       a function name... 
 url = 'http://localhost:8006/' + 'Freddy2Jason'
-
-# They used to call it a 'stub'
-Freddy2Jason = lambda data: invoke(url = url, data = data)
-
 # ... and its arguments 
 data = {'ID':       0b1010, 
         'sender':   'Train Driver',
@@ -21,5 +19,9 @@ data = {'ID':       0b1010,
         'message':  'Python Derailed',
         'severity': 3.141592653589793238462643,
         'flag':     True}
-## Invoke a service and wait... for a response
-print('Reply-from a server: ', Freddy2Jason(data))
+
+# They used to call the following 'a «stub»'
+Freddy2Jason = lambda data: invoke(url = url, data = data)
+# ... so that one can call a remote procedure as if it is local...
+answer = Freddy2Jason(data)
+print('Reply-from a server: ', json.dumps(answer, indent = 0b11))

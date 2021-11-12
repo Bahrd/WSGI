@@ -29,8 +29,8 @@ def edge_form():
 # Web service with POST & JSON
 @app.route('/Freddy2Jason', methods = ['POST'])
 def JSNX():
-    print('RAW request', request)
     content = request.json
+    print('RAW request', request, content)
     
     # Sometimes servers gotta do what the servers gotta do...
     content['ID'], content['severity'] = 0o52, 2.718281828459045
