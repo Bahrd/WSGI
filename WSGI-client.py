@@ -7,15 +7,19 @@ def invoke(url, data):
     print('Sent-to a server: ' + json.dumps(data, indent = 3))
     answer = requests.post(url, json = data).content
     return_value = json.loads(answer)
-    return return_value['ID']
+    return return_value
+# A target "namespace" and       a function name... 
+url = 'http://localhost:8006/' + 'Freddy2Jason'
 
-# A target "namespace" and...   function name... 
-url = 'http://localhost:8006/' + 'JSON-EX'
-# ... and arguments 
-data = {'ID':0b1010, 
-        'sender': 'Train Driver',
+# They used to call it a 'stub'
+Freddy2Jason = lambda data: invoke(url = url, data = data)
+
+# ... and its arguments 
+data = {'ID':       0b1010, 
+        'sender':   'Train Driver',
         'receiver': 'Traffic Controller',
-        'action': 'Python On Rails',
-        'flag': True}
+        'action':   'Python On Rails',
+        'severity': 3.141592653589793238462643,
+        'flag':     True}
 ## Invoke a service and wait... for a response
-print('Reply-from a server: ', invoke(url, data))
+print('Reply-from a server: ', Freddy2Jason(data))

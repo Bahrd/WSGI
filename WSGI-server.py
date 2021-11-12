@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def AYA():
     docs = 'https://pythonbasics.org/flask-rest-api/' 
-    return 'Go for <a href ="{0}">docu\'drama<a/>...'.format(docs)
+    return f'Go for <a href ="{docs}">docu\'drama<a/>...'
 
 # Request for a file with GET
 @app.route('/apps/<converter>', methods = ['GET'])
@@ -27,12 +27,12 @@ def edge_form():
     return 'Gotcha {:.3}l/100km!'.format(mpg2lkm/eval(value))
 
 # Web service with POST & JSON
-@app.route('/JSON-EX', methods = ['POST'])
+@app.route('/Freddy2Jason', methods = ['POST'])
 def JSNX():
     print('RAW request', request)
     content = request.json
     # Do what you gotta do...
-    content['ID'] = 0o52
+    content['ID'], content['severity'] = 0o52, 2.718281828459045
     print('Reply-to a client: ', json.dumps(content, indent = 0b11))
     # send a result back to a client
     return content
