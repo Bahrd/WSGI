@@ -32,14 +32,18 @@ def JSNX():
     print('RAW request', request)
     content = request.json
     
-    # Do what you gotta do...
+    # Sometimes servers gotta do what the servers gotta do...
     content['ID'], content['severity'] = 0o52, 2.718281828459045
     content['receiver'], content['sender'] = content['sender'], content['receiver']
     content['message'] = 'Python On Rails'
 
     print('Reply-to a client: ', json.dumps(content, indent = 0b11))
-    # send a result back to a client
+    # ... and send a result back to a client
     return content
-## Run a server and wait... and wait... for invocation
+
+## Run a server and wait... 
+#               and wait... 
+#               and wait... 
+#  ... for invocation
 if __name__ == '__main__':
     app.run(host = 'localhost', port = '8006', debug = True)
