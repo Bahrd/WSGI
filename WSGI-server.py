@@ -38,9 +38,9 @@ def JSNX():
     content['message'] = 'Python On Rails'
 
     # https://stackoverflow.com/questions/37237034/how-to-get-results-out-of-a-python-exec-eval-call
-    command, ret = content['code'], {}
-    exec(command, ret)
-    content['code'] = str(ret['code'])
+    command, aux = content['code'], {}
+    exec(command, aux)
+    content['code'] = str(aux['code'])
     
     print('Reply-to a client: ', json.dumps(content, indent = 0b11))
     # ... and send a result back to a client

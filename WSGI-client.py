@@ -19,7 +19,7 @@ params = {'ID':       0b1010,
           'receiver': 'Traffic Controller',
           'message':  'Python Derailed',
           'severity': 3.141592653589793238462643,
-          'code':     'a, b, c = 32, 33, 34; code = a * (b + c)',
+          'code':     'x, y, z = 0o10, 0x10, 0b10; code = x * (y + z)',
           'flag':     True}
 
 # They used to call the following 'a «stub»'
