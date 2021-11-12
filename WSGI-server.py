@@ -31,8 +31,12 @@ def edge_form():
 def JSNX():
     print('RAW request', request)
     content = request.json
+    
     # Do what you gotta do...
     content['ID'], content['severity'] = 0o52, 2.718281828459045
+    content['receiver'], content['sender'] = content['sender'], content['receiver']
+    content['message'] = 'Python On Rails'
+
     print('Reply-to a client: ', json.dumps(content, indent = 0b11))
     # send a result back to a client
     return content

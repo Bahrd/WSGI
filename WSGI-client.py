@@ -18,7 +18,7 @@ Freddy2Jason = lambda data: invoke(url = url, data = data)
 data = {'ID':       0b1010, 
         'sender':   'Train Driver',
         'receiver': 'Traffic Controller',
-        'action':   'Python On Rails',
+        'message':  'Python Derailed',
         'severity': 3.141592653589793238462643,
         'flag':     True}
 ## Invoke a service and wait... for a response
