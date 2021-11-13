@@ -10,25 +10,25 @@ def AYA():
     docs = 'https://pythonbasics.org/flask-rest-api/' 
     return f'Go for <a href ="{docs}">docu\'drama<a/>...'
 
-# Request for a file with GET
+# GET request for a file
 @app.route('/apps/<converter>', methods = ['GET'])
 def download_file(converter):
     return send_file('./WSGI-form.html', as_attachment = False)
-# Request for an image GET
+# GET request for an image
 @app.route('/apps/SFP.JPEG', methods = ['GET'])
 def download_image():
     return send_file('./San Francisco Peaks.JPEG', as_attachment = False)
 
-# Request form with GET
+# GET request form (a baby RPC)
 @app.route('/converter')
 def edge_form():
     value = request.args.get('MPG')
     mpg2lkm = 3.78541178/1.609344 * 100 #gallon/mile * km
     return 'Gotcha {:.3}l/100km!'.format(mpg2lkm/eval(value))
 
-# Web service with POST & JSON
+# POST & JSON web service request (a big daddy RPC)
 @app.route('/Freddy0b10Jason', methods = ['POST'])
-def JSNX():
+def Freddy0b10Jason():
     args = request.json
     print('RAW request', request, args)
     
