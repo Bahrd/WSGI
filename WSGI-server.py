@@ -27,28 +27,26 @@ def edge_form():
     return 'Gotcha {:.3}l/100km!'.format(mpg2lkm/eval(value))
 
 # Web service with POST & JSON
-@app.route('/Freddy2Jason', methods = ['POST'])
+@app.route('/Freddy0b10Jason', methods = ['POST'])
 def JSNX():
-    content = request.json
-    print('RAW request', request, content)
+    args = request.json
+    print('RAW request', request, args)
     
     # Sometimes servers gotta do what the servers gotta do...
-    content['ID'], content['severity'] = 0o52, 2.718281828459045
-    content['receiver'], content['sender'] = content['sender'], content['receiver']
-    content['message'] = 'Python On Rails'
+    args['ID'], args['severity'], args['message'] = 0o52, 2.718281828459045, 'Python On Rails'
 
     # https://stackoverflow.com/questions/37237034/how-to-get-results-out-of-a-python-exec-eval-call
-    command, aux = content['code'], {}
+    command, aux = args['code'], {}
     exec(command, aux)
-    content['code'] = str(aux['code'])
+    args['code'] = str(aux['code'])
     
-    print('Reply-to a client: ', json.dumps(content, indent = 0b11))
+    print('Reply-to a client: ', json.dumps(args, indent = 0b11))
     # ... and send a result back to a client
-    return content
+    return args
 
 ## Run a server and wait... 
 #               and wait... 
 #               and wait... 
-#  ... for invocation
+#  ... for a client's request
 if __name__ == '__main__':
     app.run(host = 'localhost', port = '8006', debug = True)
