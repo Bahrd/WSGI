@@ -78,7 +78,8 @@
 		}
 		function cloud_convert()
 		{
-			let url = new URL('http://localhost:8006/converter');
+            let path = location.protocol + '//' + location.hostname + ':' + location.port + '/converter';
+			let url = new URL(path);
 			let value = document.getElementById("MPGC").value;
 			url.searchParams.set('MPG', value); // added parameter with a space and !
 
