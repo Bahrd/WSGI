@@ -18,7 +18,7 @@ args = {
           'ID':       0b1010, 
           'message':  'Python Derailed',
           'severity': 3.141592653589793238462643,
-          'code':     'from numpy import sqrt; x, y, z = 0o10, 0x10, 0b10; code = sqrt(x * (y + z))'
+          'code':     'from numpy import sqrt; α, β, γ = 0o10, 0x10, 0b10; code = sqrt(α * (β + γ))'
        }
 
 # They used to call the following 'a «stub»'

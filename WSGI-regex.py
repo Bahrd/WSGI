@@ -1,7 +1,8 @@
 '''
 https://docs.python.org/3/howto/regex.html
-https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s20.html
-http://bumblebeesoftware.com/
+http://bumblebeesoftware.com/ (or rather: https://stackoverflow.com/questions/5456011/how-to-compile-lex-yacc-files-on-windows)
 
-Thinking about a non-trivial example...
+Still thinkering with a non-trivial example... Maybe, a combination of these two?
+https://realpython.com/python-async-features/ 
+https://realpython.com/regex-python/
 '''
