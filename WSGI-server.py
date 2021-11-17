@@ -15,14 +15,14 @@ def AYA():
 def download_file(converter):
     return send_file('./WSGI-form.html', as_attachment = False)
 
-# A sweet GET request for an image (a syntactic sugar '@' added)
-@app.route('/img/SFP.JPEG', methods = ['GET'])
-def download_image():
+# A GET request for an image (with and without a syntactic sugar...)
+@app.route('/imgs/SFP.JPEG', methods = ['GET'])
+def sweet_image():
     return send_file('./San Francisco Peaks.JPEG', as_attachment = False)
-## A sugar-free version of the GET request for an image
-#def download_image():
-#    return send_file('./San Francisco Peaks.JPEG', as_attachment = False)
-#app.add_url_rule('/img/SFP.JPEG', 'download_image', download_image, methods = ['GET'])
+
+def sugar_free_image():
+    return send_file('./Saguaro Park.JPEG', as_attachment = False)
+app.add_url_rule('/imgs/SP.JPEG', 'sugar_free_image', sugar_free_image, methods = ['GET'])
 
 # GET request form (a baby RPC)
 @app.route('/converter')
