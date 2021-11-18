@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	<!-- See: https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface -->
 	<title>The WSGI mpg to l/100km converter</title>
 	<style>
 		form {
@@ -73,7 +72,7 @@
 			if (mph.checkValidity())
 			{
 				document.getElementById("lkm").innerHTML
-					= "Gotcha "
+					= "I betcha you gotcha "
 					+ (mpc / mpv).toFixed(1)
 					+ "l/100km!"
 			}
