@@ -15,7 +15,7 @@ def AYA():
 def download_file(converter):
     return send_file('./WSGI-form.html', as_attachment = False)
 
-# A GET request for an image (with and without a syntactic sugar...)
+# GET request for an image (with and without a syntactic sugar...)
 @app.route('/imgs/SFP.JPEG', methods = ['GET'])
 def sweet_image():
     return send_file('./San Francisco Peaks.JPEG', as_attachment = False)
@@ -29,7 +29,7 @@ app.add_url_rule('/imgs/SP.JPEG', 'sugar_free_image', sugar_free_image, methods 
 def edge_form():
     value = request.args.get('MPG')
     mpg2lkm = 3.78541178/1.609344 * 100 #gallon/mile * km
-    return 'Gotcha {:.3}l/100km!'.format(mpg2lkm/eval(value))
+    return 'You gotcha {:.3}l/100km!'.format(mpg2lkm/eval(value))
 
 # POST & JSON web service request (a big daddy RPC)
 @app.route('/Freddy0b10Jason', methods = ['POST'])
