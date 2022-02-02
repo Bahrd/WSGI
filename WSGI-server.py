@@ -15,11 +15,11 @@ def AYA():
 def download_file(converter):
     return send_file('./WSGI-form.html', as_attachment = False)
 
-# A GET request for an image (with and without a syntactic sugar...)
+# A GET request for an image (with...
 @app.route('/imgs/SFP.JPEG', methods = ['GET'])
 def sweet_image():
     return send_file('./San Francisco Peaks.JPEG', as_attachment = False)
-
+# ... and without a syntactic sugar)
 def sugar_free_image():
     return send_file('./Saguaro Park.JPEG', as_attachment = False)
 app.add_url_rule('/imgs/SP.JPEG', 'sugar_free_image', sugar_free_image, methods = ['GET'])
@@ -52,6 +52,6 @@ def Freddy0b10Jason():
 ## Run a server and wait... 
 #               and wait... 
 #               and wait... 
-#  ... for a client's request
+#  ... for clients' requests
 if __name__ == '__main__':
     app.run(host = 'localhost', port = '8006', debug = True)

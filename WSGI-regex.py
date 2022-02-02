@@ -13,11 +13,11 @@ import re
 # https://www.englishclub.com/ref/esl/Power_of_7/7_Thats_2948.php
 p = re.compile(r'\b(?P<word>\w+\s*)(?P=word)+\b')
 s = p.search('"It is true for all that that that that that'
-             ' that that refers to is not the same that that that that refers to..."').group().split()
+             ' that that refers to is not the same that that that that does..."').group().split()
 print(s)
 
-that2this = lambda t: 'what this '
+that2whatever = lambda t: 'whatever '
 ## https://www.cristinacabal.com/?p=482
 p = re.compile(r'\b(\w+(\s+))(\1)+\b')
-r = p.sub(that2this, '"I think that that that that that teacher gave us is correct..."')
+r = p.sub(that2whatever, '"I just hope that that that that that people give us is nice..."')
 print(r)
