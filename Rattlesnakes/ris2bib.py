@@ -8,15 +8,15 @@ k2k = {  'TI': 'title',   'VL': 'volume', 'JO': 'journal', 'PB': 'publisher',
          'DO': 'doi',     'UR': 'url', 'PY': 'year'}
 types = {'JOUR': 'article', 'CONF': 'inproceedings', 
          'BOOK': 'book',    'CHAP': 'incollection'}
+bib, id, type, short = {}, '', '', True
 
 def flush(bib, ind = 4 * ' '):
     print(f'@{type}' + '{' + f'{id},')          # header
     for k in bib: 
         print(ind + k + ' = {' + bib[k] + '},') # body
     print('}')                                  # footer
-    bib.clear(); return bib                     # call a day
+    bib.clear(); return bib                     # call it a day
 
-bib, id, type, short = {}, '', '', True
 ## Line-by-line translation (would that be easier with lex/yacc?)  
 for line in sys.stdin: 
     kv = re.split('\s{2}-\s+', line.rstrip())
