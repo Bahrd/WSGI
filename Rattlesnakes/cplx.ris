@@ -6,14 +6,14 @@ AU  - Punpongsanon, Parinya
 AU  - Novy, Dan
 AU  - Maes, Pattie
 AU  - Sra, Misha
-PY  - 2021
-DA  - 2021/12/01
 TI  - AI-generated characters for supporting personalized learning and well-being
 JO  - Nature Machine Intelligence
 SP  - 1013
 EP  - 1022
 VL  - 3
 IS  - 12
+PY  - 2021
+DA  - 2021/12/01
 AB  - Advancements in machine learning have recently enabled the hyper-realistic synthesis of prose, images, audio and video data, in what is referred to as artificial intelligence (AI)-generated media. These techniques offer novel opportunities for creating interactions with digital portrayals of individuals that can inspire and intrigue us. AI-generated portrayals of characters can feature synthesized faces, bodies and voices of anyone, from a fictional character to a historical figure, or even a deceased family member. Although negative use cases of this technology have dominated the conversation so far, in this Perspective we highlight emerging positive use cases of AI-generated characters, specifically in supporting learning and well-being. We demonstrate an easy-to-use AI character generation pipeline to enable such outcomes and discuss ethical implications as well as the need for including traceability to help maintain trust in the generated media. As we look towards the future, we foresee generative media as a crucial part of the ever growing landscape of human-AI interaction.
 SN  - 2522-5839
 UR  - https://doi.org/10.1038/s42256-021-00417-9
