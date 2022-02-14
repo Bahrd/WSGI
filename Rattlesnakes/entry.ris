@@ -10,9 +10,19 @@ EP  - 423
 VL  - 27
 ID  - Shannon1948
 ER  - 
-TY  - JOUR
+TY  - RPRT
 AU  - Shannon, Claude E.
 SP  - 379
 EP  - 423
-ID  - Shannon1948
+PY  - 1946
+ID  - Shannon1946
+ER  - 
+TY  - PCOMM
+AU  - Shannon, Claude E.
+ID  - Shannon1945
+PY  - 1945
+ER  - 
+TY  - PCOMM
+AU  - Me, Myself, and I.
+PY  - 1971
 ER  - 
