@@ -32,7 +32,7 @@ for line in sys.stdin:
         # The standard one-to-one line field conversions
         case [k, v] if k in k2k: b[k2k[k]] = v
 
-        # The fields that need a special handling
+        # The fields with a bit more elaborated semantics
         case ['TY', v]  if v in types: t = types[v] 
         case ['ID', v]: i = v
         case ['AU', v]: 
@@ -41,7 +41,7 @@ for line in sys.stdin:
         case ['SP', v]: b['pages'] = v
         case ['EP', v]: b['pages'] += ' - ' + v
         case ['ER  -']: flush(b); i, t = default
-        # The remaining fields are ignored (in this version)
+        # The 'ignoramus et ignorabimus' fields
         case _: pass
 #  ------
 #  * If the abstract is a bit lengthy, one can extract the first sequence instead:
