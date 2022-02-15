@@ -16,10 +16,10 @@ types = {'JOUR': 'article', 'CONF': 'inproceedings', 'EDBOOK': 'booktitle',
 #  dictionary of bibitem fields
 #  placeholder in case of the lack of ID field
 #  default bibitem type
-default = {}, 'NN', 'misc' 
+default = 'NN', 'misc'
+b, (i, t) = {}, default
 
-b, i, t = default
-def flush(w = 4 * ' '):                  # 'w' is an indentation parameter
+def flush(b, w = 4 * ' '):               # 'w' is an indentation
     print(f'@{t}' + '{' + i + ',')       # header:  '@type{id.'
     for k, v in b.items(): 
         print(w + k + ' = {' + v + '},') # body:    'entry = {value},'
@@ -40,7 +40,7 @@ for line in sys.stdin:
             else:             b['author'] = v
         case ['SP', v]: b['pages'] = v
         case ['EP', v]: b['pages'] += ' - ' + v
-        case ['ER  -']: flush(); b, i, t = default
+        case ['ER  -']: flush(b); i, t = default
         # The remaining fields are ignored (in this version)
         case _: pass
 #  ------
