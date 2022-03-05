@@ -2,20 +2,20 @@
 #  ver. 0.π (only the most popular entries are handled)
 #  See: http://www.bibtex.org/Format/ and https://www.bibtex.com/e/entry-types/ or
 #       https://en.wikipedia.org/wiki/RIS_(file_format)
-import re, sys
-from datetime import datetime as dt
+from sys import stdin
+from re import split
 
-# names of BibTeX item fields
+# Selected RIS entries and their BibTeX counterparts
 k2k = {  'TI': 'title',   'VL': 'volume', 'JO': 'journal', 'PB': 'publisher',
          'PP': 'address', 'ED': 'editor', 'IS': 'issue', 'SER': 'series',
          'DO': 'doi',     'UR': 'url', 'PY': 'year', 'AB': 'abstract'}
-# types of BibTeX items
+# Types of BibTeX items
 types = {'JOUR': 'article', 'CONF': 'inproceedings', 'EDBOOK': 'booktitle', 
          'BOOK': 'book',    'CHAP': 'incollection', 'RPRT':	'report'}
 ## Initialization tuple: 
-#  dictionary of bibitem fields
-#  placeholder in case of the lack of ID field
-#  default bibitem type
+#  + dictionary of bibitem fields
+#  + placeholder in case of the lack of ID field
+#  + default bibitem type
 default = 'NN', 'misc'
 b, (i, t) = {}, default
 
@@ -27,8 +27,8 @@ def flush(b, w = 4 * ' '):               # 'w' is an indentation
     b.clear()                            # Call it a day!
 
 ## Line-by-line translation (no need for a lex/yacc combo?)  
-for line in sys.stdin: 
-    match re.split('\s{2}-\s+', line.rstrip()):     # Only if sys.version_info >= (3, 10)
+for line in stdin: 
+    match split('\s{2}-\s+', line.rstrip()):  
         # The standard one-to-one line field conversions
         case [k, v] if k in k2k: b[k2k[k]] = v
 
