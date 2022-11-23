@@ -1,5 +1,4 @@
 ﻿##  https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface
-
 from flask import Flask, request, send_file
 import json
 
@@ -38,20 +37,22 @@ def Freddy0b10Jason():
     print('RAW request', request, args)
     
     # Sometimes servers gotta do what the servers gotta do...
-    args['ID'], args['severity'], args['message'] = 0o52, 2.718281828459045, 'Python On Rails'
+    args['ID'], args['severity'], args['message'] = 0o52, 2.718281828459045, '¡Python On Rails!'
 
     # https://stackoverflow.com/questions/37237034/how-to-get-results-out-of-a-python-exec-eval-call
     command, aux = args['code'], {}
     exec(command, aux)
-    args['code'] = str(aux['code'])
+    args['code'] = str(aux['result'])
     
-    print('Reply-to a client: ', json.dumps(args, indent = 0b11))
+    print('Reply-to a client: ', json.dumps(args, indent = 0b11, ensure_ascii = False).encode('utf8').decode())
     # ... and send a result back to a client
     return args
-
-## Run a server and wait... 
-#               and wait... 
-#               and wait... 
-#  ... for clients' requests
+'''Run a server and wait... 
+                and wait... 
+                and wait... 
+   ... for clients' requests to arrive...
+   http://localhost:8006/apps/converter or http://localhost:8006/converter?MPG=42
+   http://localhost:8006/imgs/SP.JPEG or http://localhost:8006/imgs/SFP.JPEG
+   '''
 if __name__ == '__main__':
     app.run(host = 'localhost', port = '8006', debug = True)
