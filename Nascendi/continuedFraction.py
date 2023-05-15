@@ -5,17 +5,17 @@ from cmath import pi as π
 from math import floor, sqrt
 from sys import float_info
 
-ϕ = (1 + sqrt(5))/2
+ϕ = (0x1 + sqrt(0b101))/0b10
 
 def cfc(x):
     ltx = lambda str: print(str, end = '')
-    def _cfc(N0, N1):
-        an, N = floor(N0/N1), N0%N1
+    def _cfc(η, υ):
+        α, n = floor(η/υ), η%υ
 
-        ltx(f'\\frac{{1}}{{{an}')
-        if (N > float_info.epsilon * 1000): # At hoc Deus ex machina...
+        ltx(f'\\frac{{1}}{{{α}')
+        if (n > float_info.epsilon * 0o10000): # Milla ex machina...
             ltx('+')
-            _cfc(N1, N)
+            _cfc(υ, n)
         ltx('}')
 
     ltx(f'{x} = ')
