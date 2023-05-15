@@ -9,7 +9,7 @@ def AYA():
     docs = 'https://pythonbasics.org/flask-rest-api/' 
     return f'Go for <a href ="{docs}">docu\'drama<a/>...'
 
-# GET request for a file
+# GET request for an app (with a HTML-based GUI) - or whathever you decide w.r.t. the value of <converter> parameter
 @app.route('/apps/<converter>', methods = ['GET'])
 def download_file(converter):
     return send_file('./WSGI-form.html', as_attachment = False)
@@ -18,7 +18,7 @@ def download_file(converter):
 @app.route('/imgs/SFP.JPEG', methods = ['GET'])
 def sweet_image():
     return send_file('./San Francisco Peaks.JPEG', as_attachment = False)
-# ... and without a syntactic sugar)
+# ... or without a syntactic sugar)
 def sugar_free_image():
     return send_file('./Saguaro Park.JPEG', as_attachment = False)
 app.add_url_rule('/imgs/SP.JPEG', 'sugar_free_image', sugar_free_image, methods = ['GET'])

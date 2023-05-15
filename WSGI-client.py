@@ -12,15 +12,17 @@ def invoke(url, args):
     # ... and wait for a response
     return json.loads(answer)
 
-#     A target "namespace" and a function name... 
+#     A target "namespace",       a function name... 
 url = 'http://localhost:8006/' + 'Freddy0b10Jason'
 # ... and its arguments 
 args = {
           'ID':       0b1010, 
-          'message':  '¿Python Derailed?',
+          'message':  '¿Python Derailed?', 
           'severity': 3.141592653589793238462643,
           'code':     'from numpy import sqrt; α, β, γ, δ = 0o10, 0x10, 0b10, 1; result = sqrt(α * (β + γ)/δ)'
        }
+# If you like Finnish palindromes, then here you go: "iso ja hatara ruma rata hajosi"
+# https://www.youtube.com/watch?v=EA2DKe8-IYg&lc=UgxL6uvgP4UMMNLAeDd4AaABAg
 
 # They used to call the following 'a «stub»'
 Freddy2Jason = lambda args: invoke(url = url, args = args)
