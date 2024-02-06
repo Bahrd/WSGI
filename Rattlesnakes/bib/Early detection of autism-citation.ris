@@ -1,0 +1,26 @@
+TY  - JOUR
+AU  - Perochon, Sam
+AU  - Di Martino, J. Matias
+AU  - Carpenter, Kimberly L. H.
+AU  - Compton, Scott
+AU  - Davis, Naomi
+AU  - Eichner, Brian
+AU  - Espinosa, Steven
+AU  - Franz, Lauren
+AU  - Krishnappa Babu, Pradeep Raj
+AU  - Sapiro, Guillermo
+AU  - Dawson, Geraldine
+PY  - 2023
+DA  - 2023/10/01
+TI  - Early detection of autism using digital behavioral phenotyping
+JO  - Nature Medicine
+SP  - 2489
+EP  - 2497
+VL  - 29
+IS  - 10
+AB  - Early detection of autism, a neurodevelopmental condition associated with challenges in social communication, ensures timely access to intervention. Autism screening questionnaires have been shown to have lower accuracy when used in real-world settings, such as primary care, as compared to research studies, particularly for children of color and girls. Here we report findings from a multiclinic, prospective study assessing the accuracy of an autism screening digital application (app) administered during a pediatric well-child visit to 475 (17–36 months old) children (269 boys and 206 girls), of which 49 were diagnosed with autism and 98 were diagnosed with developmental delay without autism. The app displayed stimuli that elicited behavioral signs of autism, quantified using computer vision and machine learning. An algorithm combining multiple digital phenotypes showed high diagnostic accuracy with the area under the receiver operating characteristic curve = 0.90, sensitivity = 87.8%, specificity = 80.8%, negative predictive value = 97.8% and positive predictive value = 40.6%. The algorithm had similar sensitivity performance across subgroups as defined by sex, race and ethnicity. These results demonstrate the potential for digital phenotyping to provide an objective, scalable approach to autism screening in real-world settings. Moreover, combining results from digital phenotyping and caregiver questionnaires may increase autism screening accuracy and help reduce disparities in access to diagnosis and intervention.
+SN  - 1546-170X
+UR  - https://doi.org/10.1038/s41591-023-02574-3
+DO  - 10.1038/s41591-023-02574-3
+ID  - Perochon2023
+ER  - 

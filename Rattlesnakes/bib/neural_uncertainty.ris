@@ -1,0 +1,23 @@
+TY  - JOUR
+AU  - Walker, Edgar Y.
+AU  - Pohl, Stephan
+AU  - Denison, Rachel N.
+AU  - Barack, David L.
+AU  - Lee, Jennifer
+AU  - Block, Ned
+AU  - Ma, Wei Ji
+AU  - Meyniel, Florent
+PY  - 2023
+DA  - 2023/11/01
+TI  - Studying the neural representations of uncertainty
+JO  - Nature Neuroscience
+SP  - 1857
+EP  - 1867
+VL  - 26
+IS  - 11
+AB  - The study of the brain’s representations of uncertainty is a central topic in neuroscience. Unlike most quantities of which the neural representation is studied, uncertainty is a property of an observer’s beliefs about the world, which poses specific methodological challenges. We analyze how the literature on the neural representations of uncertainty addresses those challenges and distinguish between ‘code-driven’ and ‘correlational’ approaches. Code-driven approaches make assumptions about the neural code for representing world states and the associated uncertainty. By contrast, correlational approaches search for relationships between uncertainty and neural activity without constraints on the neural representation of the world state that this uncertainty accompanies. To compare these two approaches, we apply several criteria for neural representations: sensitivity, specificity, invariance and functionality. Our analysis reveals that the two approaches lead to different but complementary findings, shaping new research questions and guiding future experiments.
+SN  - 1546-1726
+UR  - https://doi.org/10.1038/s41593-023-01444-y
+DO  - 10.1038/s41593-023-01444-y
+ID  - Walker2023
+ER  - 

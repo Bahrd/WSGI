@@ -3,7 +3,7 @@
 #  See: http://www.bibtex.org/Format/ and https://www.bibtex.com/e/entry-types/ or
 #       https://en.wikipedia.org/wiki/RIS_(file_format)
 from sys import stdin
-from re import split
+from re import split, match
 
 # Selected RIS entries and their BibTeX counterparts
 k2k = {  'TI': 'title',   'VL': 'volume', 'JO': 'journal', 'PB': 'publisher',
@@ -28,7 +28,7 @@ def flush(b, w = 4 * ' '):               # 'w' is an indentation
 
 ## Line-by-line translation (no need for a lex/yacc combo?)  
 for line in stdin: 
-    match split('\s{2}-\s+', line.rstrip()):  
+    match split('\\s{2}-\\s+', line.rstrip()):  
         # The standard one-to-one line field conversions
         case [k, v] if k in k2k: b[k2k[k]] = v
 
@@ -44,5 +44,7 @@ for line in stdin:
         # The 'ignoramus et ignorabimus' fields
         case _: pass
 #  ------
-#  * If the abstract is a bit lengthy, one can extract the first sequence instead:
-#    'case ['AB', v]: bib['abstract'] = re.match('[^\.]+\.', v).group(0)'
+#  * If the abstract is a bit lengthy, one can extract the first sequence instead (insert the line below as the first):
+#    'case ['AB', v]: b['abstract'] = match('[^\\.]+\\.', v).group(0)'
+
+#  ** The commands 'chcp 65001' and 'Get-Content -Encoding UTF8 bla-bla.ris | python ris2bib.py' are sometimes useful.
