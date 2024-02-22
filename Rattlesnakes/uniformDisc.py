@@ -6,7 +6,7 @@ from matplotlib.pyplot import gca, scatter, title, show
 from numpy import sqrt, sin, cos, pi as π 
 from numpy.random import uniform as U
 
-N = 1000
+N = 1_000
 ## Generate N random points in polar coordinates
 R, θ = sqrt(U(0, 1, N)), U(0, 2*π, N)
 

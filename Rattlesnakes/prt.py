@@ -9,3 +9,11 @@
    representing an area light source by a collection of 
    separate (but adjacent) point sources.
 '''
+
+## The first attempt... (to axiomatic definition of natural numbers)
+_, __, ___ = lambda _, __ : _ + __, [{}], [] 
+f'{len(_(__ , ___)), len(_(__ , (_(__ , ___)))), len(_(__ , ___)) + len(_(__ , (_(__ , ___)))) = }'
+
+## The second one...
+_0, _n = [], lambda _ : _ + [{}]
+f'{len(_0), len(_n(_0)), len(_n(_n(_0))) = }'
