@@ -1,7 +1,6 @@
 ﻿## https://docs.python.org/3/howto/sockets.html
 # https://wiki.python.org/moin/UdpCommunication
 # https://stackoverflow.com/questions/6289474/working-with-utf-8-encoding-in-python-source
-from ast import Try
 from socket import *
 
 ip, port = '127.0.0.1', 5005

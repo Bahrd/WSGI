@@ -10,10 +10,17 @@
    separate (but adjacent) point sources.
 '''
 
-## The first attempt... (to axiomatic definition of natural numbers)
-_, __, ___ = lambda _, __ : _ + __, [{}], [] 
-f'{len(_(__ , ___)), len(_(__ , (_(__ , ___)))), len(_(__ , ___)) + len(_(__ , (_(__ , ___)))) = }'
+## The first attempt... (to an axiomatic definition of natural numbers)
+#  https://en.wikipedia.org/wiki/Set-theoretic_definition_of_natural_numbers
+#  - “Aus nichts wird nichts” 
+#  - “What are a mathematician’s first words? Hold my paper and watch this.”
+_0, _n = '', lambda _: _ + '_' 
+f'{_0, _n(_0), _n(_n(_0)), _n(_n(_n(_0))) = } → {len(_0), len(_n(_0)), len(_n(_n(_0))), len(_n(_n(_n(_0))))}'
 
-## The second one...
-_0, _n = [], lambda _ : _ + [{}]
-f'{len(_0), len(_n(_0)), len(_n(_n(_0))) = }'
+## ... And the second one:
+#_, __, ___ = lambda _, __ : _ + __, [{}], [] 
+#f'{len(_(__ , ___)), len(_(__ , (_(__ , ___)))), len(_(__ , ___)) + len(_(__ , (_(__ , ___)))) = }'
+
+## The third time is the charm - as they say...
+_0, _n = [], lambda _ : _ + [None]
+f'{_0, _n(_0), _n(_n(_0)) = } → {len(_0), len(_n(_0)), len(_n(_n(_0)))}'

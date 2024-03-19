@@ -1,6 +1,8 @@
 '''
 https://docs.python.org/3/howto/regex.html
-http://bumblebeesoftware.com/ (or rather: https://stackoverflow.com/questions/5456011/how-to-compile-lex-yacc-files-on-windows)
+http://bumblebeesoftware.com/ 
+(or rather: https://stackoverflow.com/questions/5456011/how-to-compile-lex-yacc-files-on-windows)
+(or even better: https://ply.readthedocs.io/en/latest/index.html)
 
 Still thinkering with a non-trivial example... 
 Maybe, a combination of these two?
