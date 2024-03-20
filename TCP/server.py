@@ -9,10 +9,10 @@ import threading
 
 def handle_like_pro(c, addr):
     # Receiving data from the client
-    msg = c.recv(0x100)
-    print('Expression to evaluate:', msg.decode())
-    # Sending a ACK message to the client
-    c.send(f'{addr}: {msg.decode()} = {eval(msg.decode())}'.encode()) 
+    expr = c.recv(0x100).decode()
+    print('Expression to evaluate:', expr)
+    # Sending an ACK message to the client
+    c.send(f'{addr}: {expr} = {eval(expr)}'.encode()) 
 
     # Closing the connection with the client..
     c.close()
@@ -40,10 +40,9 @@ with socket() as s:
             c, addr = s.accept()	 
             # Horses for courses... 
             print(f'Handling a request from: {addr} in a thread')            
-            th = threading.Thread(target = handle_like_pro, 
-                                  args = (c, addr), 
-                                  daemon = True)
-            th.start()
+            threading.Thread(target = handle_like_pro, 
+                             args = (c, addr), 
+                             daemon = True).start()
             
     except IOError:
         print('OIOI error!')

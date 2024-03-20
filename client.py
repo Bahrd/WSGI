@@ -4,7 +4,7 @@ import requests
 import json
 
 def invoke(url, args):
-    print('Sent-to a server:'), print(json.dumps(args, indent = 0b11, ensure_ascii = False).encode('utf8').decode())
+    print('Sent-to a server:'), print(json.dumps(args, indent = 0b11, ensure_ascii = False).encode().decode())
           
     # Invoke a service via POST...
     rpc = requests.post(url, json = args)
@@ -28,4 +28,4 @@ args = {
 Freddy2Jason = lambda args: invoke(url = url, args = args)
 # ... so that one can call a remote procedure as if it is local...
 answer = Freddy2Jason(args)
-print('Reply-from a server: ', json.dumps(answer, indent = 0b11, ensure_ascii = False).encode('utf8').decode())
+print('Reply-from a server: ', json.dumps(answer, indent = 0b11, ensure_ascii = False).encode().decode())

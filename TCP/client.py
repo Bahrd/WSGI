@@ -10,12 +10,15 @@ with socket() as s:
         port = 12345			
 
         # Connecting to the server
-        s.connect(('127.0.0.1', port)) 
-
-        s.send(stdin.read().strip().encode())
+        s.connect(('127.0.0.1', port))
+        expr = stdin.read().strip().encode()
+        s.send(expr)
+        
         # Receiving data from the server
         # and decoding to get the string.
-        print(s.recv(0x100).decode())
+        result = s.recv(0x100).decode()
+        print(result)
+        
         # close the connection (once and for all)
         s.close()
     except:

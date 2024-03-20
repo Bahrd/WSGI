@@ -4,7 +4,7 @@
 from socket import *
 
 ip, port = '127.0.0.1', 5005
-msg = 'Bieży wąż wyżetą brzeziną...'
+msg = 'Bieży wąż w życie niewyżętym...'
 
 try:
     print(f'{msg} => {ip}:{port} [UDP]')
