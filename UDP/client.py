@@ -4,7 +4,7 @@
 from socket import *
 
 ip, port = '127.0.0.1', 5005
-msg = 'Bieży pyton wąską dróżką'
+msg = 'Bieży wąż wyżetą brzeziną...'
 
 try:
     print(f'{msg} => {ip}:{port} [UDP]')
@@ -15,4 +15,4 @@ try:
         sock.sendto(msg.encode(), (ip, port))
         print(sock.recv(0x100).decode())
 except IOError:
-    print('Timeout error!')
+    print('OIOI, timeout error!')

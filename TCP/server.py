@@ -10,9 +10,9 @@ import threading
 def handle_like_pro(c, addr):
     # Receiving data from the client
     msg = c.recv(0x100)
-    print('...and message:', msg.decode())
+    print('Expression to evaluate:', msg.decode())
     # Sending a ACK message to the client
-    c.send(f'Źdźbła żęte {msg.decode()} z {addr}...'.encode()) 
+    c.send(f'{addr}: {msg.decode()} = {eval(msg.decode())}'.encode()) 
 
     # Closing the connection with the client..
     c.close()

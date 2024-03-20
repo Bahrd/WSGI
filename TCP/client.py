@@ -1,7 +1,7 @@
 ﻿# https://www.geeksforgeeks.org/socket-programming-python/
 # https://stackoverflow.com/questions/2719017/how-to-set-timeout-on-pythons-socket-recv-method
 from socket	import *
-
+from sys import stdin
 # Create a socket object 
 with socket() as s:
     s.settimeout(1.0)
@@ -12,7 +12,7 @@ with socket() as s:
         # Connecting to the server
         s.connect(('127.0.0.1', port)) 
 
-        s.send('nuże zażółcą nóż wyrżniętych jaźwców...'.encode())
+        s.send(stdin.read().strip().encode())
         # Receiving data from the server
         # and decoding to get the string.
         print(s.recv(0x100).decode())
