@@ -18,6 +18,7 @@ layout, blades = clf.Cl(P, M, Z, names = names)
 globals().update(blades)
 clf.pretty(precision = 2)
 
+'''
 #a = eval('e' + ''.join([f'{a}' for a in range(1, P + M + Z + 1)]))
 
 # Extracting a pseudoscalar... (a P+M+Z-vector)
@@ -40,4 +41,14 @@ p(R)
 
 a = a * a
 p(a)
-print('łąćóźżćńę')
+'''
+a = e012.dual()
+p(a)
+a = e012.dual()
+p(a)
+
+
+from clifford import pga
+print(pga.blades)
+
+pga.e0^pga.e1^pga.e2^pga.e3

@@ -10,9 +10,9 @@ with socket(AF_INET, SOCK_DGRAM) as sock:# Internet, UDP
 
     while True:
         try:
-            data, addr = sock.recvfrom(0x100)               # wait for data
-            print(f'{addr} [UDP] => {data.decode()}')       # utf-8 decoding
-            sock.sendto('Żrące żaby żarły żmije...'.encode(), addr)   # echo back
+            data, addr = sock.recvfrom(0x100)                       # wait for data
+            print(f'{addr} [UDP] => {data.decode()}')               # utf-8 decoding
+            sock.sendto('Żrące żaby żarły żmije...'.encode(), addr) # echo back
         except IOError:
             print('OIOI error!')
             break

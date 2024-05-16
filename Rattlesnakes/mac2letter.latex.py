@@ -18,15 +18,16 @@
     1. Add this line to PS config:
     $OutputEncoding = [Console]::InputEncoding = [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding
     2. Compose and run the following pipeline: 
-    cat [input_file] | [your_python_path] mac2letter.latex.py | out-file -encoding utf8 [output_file]
+    cat -Encoding UTF8 [input_file] | [your_python_path] mac2letter.latex.py | out-file -encoding utf8 [output_file]
 '''
 
 from random import choice
 from re import sub
 from sys import stdin, stdout
 # https://stackoverflow.com/questions/492483/setting-the-correct-encoding-when-piping-stdout-in-python
+# https://stackoverflow.com/a/16549381/17524824
 stdout.reconfigure(encoding = 'utf-8')
-
+stdin.reconfigure(encoding = 'utf-8')
 # The dictionary of Polish characters in LaTeX (a.k.a. backslash counting...)
 patterns = (r'\\[lL]\ ', r'\\[lL]\{\}', r'\\k\{[aeAE]\}',
             r'\\\'\{[szoncSZONC]\}',    r'\\\.\{[zZ]\}')
