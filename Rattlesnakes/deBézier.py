@@ -1,4 +1,4 @@
-﻿# https://matplotlib.org/stable/gallery/widgets/slider_demo.html
+# https://matplotlib.org/stable/gallery/widgets/slider_demo.html
 # https://www.pbr-book.org/4ed/Shapes/Curves
 
 import matplotlib.pyplot as plt
