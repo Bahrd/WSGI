@@ -9,10 +9,12 @@ import threading
 
 def handle_like_pro(c, addr):
     # Receiving data from the client
-    expr = c.recv(0x100).decode()
+    expr = c.recv(0x100) 
+    print(expr)
+    expr = expr.decode()
     print('Expression to evaluate:', expr)
     # Sending an ACK message to the client
-    c.send(f'{addr}: {expr} = {eval(expr)}'.encode()) 
+    c.send(f'{addr}: {expr} = {eval(expr):.3g}'.encode()) 
 
     # Closing the connection with the client..
     c.close()
@@ -43,7 +45,6 @@ with socket() as s:
             threading.Thread(target = handle_like_pro, 
                              args = (c, addr), 
                              daemon = True).start()
-            
     except IOError:
         print('OIOI error!')
     except KeyboardInterrupt:

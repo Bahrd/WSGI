@@ -21,7 +21,7 @@ args = {
           'severity': 3.141592653589793238462643,
           'code':     'from numpy import sqrt; α, β, γ, δ = 0o10, 0x10, 0b10, 1; result = sqrt(α * (β + γ)/δ)'
        }
-# If you like Finnish palindromes, then here you go: "iso ja hatara ruma rata hajosi"
+# If you like Finnish palindromes, then here you go: https://fi.wikiquote.org/wiki/Palindromi
 # https://www.youtube.com/watch?v=EA2DKe8-IYg&lc=UgxL6uvgP4UMMNLAeDd4AaABAg
 
 # They used to call the following 'a «stub»'

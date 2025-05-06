@@ -22,11 +22,11 @@
 	<hr />
 	<p>
 		<a href="https://1drv.ms/f/s!ArXn9WU5Ugjzq81b8reRi8AZmARf3w" target="_blank">
-		<img src="/imgs/SFP.JPEG" width="680" title="&#128739; San Francisco Peaks @ Route 66 &#128739;" alt="Journey, not a destination...">
+		<img src="../imgs/SFP.JPEG" width="680" title="&#128739; San Francisco Peaks @ Route 66 &#128739;" alt="Journey, not a destination...">
 		</a>
 	</p>
 	<hr />
-	<form method="GET" action="http://localhost:8006/converter">
+	<form target="_blank" method="GET" action="http://localhost:8006/converter">
 		<input type="number"
 			   value="42"
 			   name="MPG"
@@ -40,7 +40,7 @@
 	<hr />
 	<p>
 		<input id="MPG"
-			   value="33"
+			   value="21"
 			   type="number"
 			   title="X [mpg] = 100(3.8/1.6)/X [l/100km]"
 			   min="0" max="100" required>
@@ -52,7 +52,7 @@
 	</p>
 	<p id="lkm"></p><hr />	<p>
 		<input id="MPGC"
-			   value="37"
+			   value="52"
 			   type="number"
 			   title="X [mpg] = 235/X [l/100km]"
 			   min="0" max="100" required>
@@ -79,9 +79,10 @@
 		}
 		function cloud_convert()
 		{
-            let path = location.protocol + '//' + location.hostname + ':' + location.port + '/converter';
-			let url = new URL(path);
+			let path = location.protocol + '//' + location.hostname + ':' + location.port + '/converter';
+            let url = new URL(path);
 			let value = document.getElementById("MPGC").value;
+
 			url.searchParams.set('MPG', value); // added parameter with a space and !
 
 			var xhttp = new XMLHttpRequest();

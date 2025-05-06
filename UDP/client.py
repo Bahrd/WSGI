@@ -3,8 +3,7 @@
 # https://stackoverflow.com/questions/6289474/working-with-utf-8-encoding-in-python-source
 from socket import *
 
-ip, port = '127.0.0.1', 5005
-msg = 'Wąż zadurzony w życie wyżętym...'
+ip, port, msg = '127.0.0.1', 5005, 'Wąż zadurzony w życie wyżętym...'
 
 try:
     print(f'{msg} => {ip}:{port} [UDP]')

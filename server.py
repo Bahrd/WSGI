@@ -12,7 +12,7 @@ def AYA():
 # GET request for an app (with a HTML-based GUI) - or whathever you decide w.r.t. the value of <converter> parameter
 @app.route('/apps/<converter>', methods = ['GET'])
 def download_file(converter):
-    return send_file('./WSGI-form.html', as_attachment = False)
+    return send_file('./form.html', as_attachment = False)
 
 # A GET request for an image (with...
 @app.route('/imgs/SFP.JPEG', methods = ['GET'])
