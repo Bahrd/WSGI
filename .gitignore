@@ -374,3 +374,5 @@ FodyWeavers.xsd
 /Rattlesnakes/VI.gif
 *.ps1
 /Rattlesnakes/.editorconfig
+/Rattlesnakes/bib
+*.tex
