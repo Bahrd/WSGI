@@ -10,8 +10,8 @@ def AYA():
     return f'Go for <a href ="{docs}">docu\'drama<a/>...'
 
 # GET request for an app (with a HTML-based GUI) - or whathever you decide w.r.t. the value of <converter> parameter
-@app.route('/apps/<converter>', methods = ['GET'])
-def download_file(converter):
+@app.route('/apps/<whatever>', methods = ['GET'])
+def download_file(whatever):
     return send_file('./form.html', as_attachment = False)
 
 # A GET request for an image (with...
@@ -22,6 +22,11 @@ def sweet_image():
 def sugar_free_image():
     return send_file('./Saguaro Park.JPEG', as_attachment = False)
 app.add_url_rule('/imgs/SP.JPEG', 'sugar_free_image', sugar_free_image, methods = ['GET'])
+
+# A GET request for an image (with...
+@app.route('/imgs/ally.png', methods = ['GET'])
+def sweet_ally():
+    return send_file('./ally.png', as_attachment = False)
 
 # GET request form (a baby RPC)
 @app.route('/converter')
@@ -41,17 +46,21 @@ def Freddy0b10Jason():
 
     # https://stackoverflow.com/questions/37237034/how-to-get-results-out-of-a-python-exec-eval-call
     command, aux = args['code'], {}
-    exec(command, aux)
-    args['code'] = str(aux['result'])
-    
-    print('Reply-to a client: ', json.dumps(args, indent = 0b11, ensure_ascii = False).encode('utf8').decode())
+    try:
+        exec(command, aux)
+        args['code'] = str(aux['result'])
+    except KeyError:
+        args['code'] = "Use 'result' variable to get (yes, you guessed it right) the result!"
+    except:
+        args['code'] = 'No result. What. So.. Ever...'
+    print('Reply-to a client: '), print(json.dumps(args, indent = 0b11, ensure_ascii = False).encode('utf8').decode())
     # ... and send a result back to a client
     return args
 '''Run a server and wait... 
                 and wait... 
                 and wait... 
    ... for clients' requests to arrive...
-   http://localhost:8006/apps/converter or http://localhost:8006/converter?MPG=42
+   http://localhost:8006/apps/whatever-floats-your-boat or http://localhost:8006/converter?MPG=52
    http://localhost:8006/imgs/SP.JPEG or http://localhost:8006/imgs/SFP.JPEG
    '''
 if __name__ == '__main__':

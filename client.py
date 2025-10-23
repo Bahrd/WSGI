@@ -28,4 +28,4 @@ args = {
 Freddy2Jason = lambda args: invoke(url = url, args = args)
 # ... so that one can call a remote procedure as if it is local...
 answer = Freddy2Jason(args)
-print('Reply-from a server: ', json.dumps(answer, indent = 0b11, ensure_ascii = False).encode().decode())
+print('Reply-from a server:'), print(json.dumps(answer, indent = 0b11, ensure_ascii = False).encode().decode())
